@@ -39,4 +39,10 @@ public class PersonController {
         ), HttpStatus.OK);
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity delete(String id) {
+        personRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
