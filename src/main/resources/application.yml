@@ -5,3 +5,19 @@ spring:
   data:
     mongodb:
       uri: 'mongodb://localhost:27017/person-db'
+
+management:
+  health:
+    diskspace:
+      enabled: false
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+info:
+  app:
+    name: @project.name@
